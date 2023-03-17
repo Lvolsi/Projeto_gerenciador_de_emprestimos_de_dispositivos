@@ -1,2 +1,2 @@
-# Projeto: gerenciador de empréstimos de dispositivos.
-Surgido da necessidade de automatizar os empréstimos de notebooks, bem como realizar consultas de dispositivos disponíveis e gerar relatórios de movimentação, o presente projeto de extensão está sendo elaborado juntamente com os professores da Fatec de Araras/SP, com o objetivo de desenvolver uma aplicação web utilizando HTML, CSS, PHP e SQL. 
+# Projeto: gerenciador de empréstimos de dispositivos
+Surgido da necessidade de automatizar os empréstimos de notebooks do campus da Fatec/Araras/SP, bem como realizar consultas de dispositivos disponíveis e gerar relatórios de movimentação, o presente projeto de extensão está sendo elaborado juntamente com os professores do curso de Desenvolvimento de Software Multiplataforma, com o objetivo de desenvolver uma aplicação web utilizando HTML, CSS, PHP e SQL. 
