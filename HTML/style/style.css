@@ -60,7 +60,7 @@ btn-primary:hover{
         margin-right: 5px;
     }
 
-/* BTN COLORES */
+/* BTN CORES */
 .btn-primary{
     border-color: #a51b0b;
     color: #a51b0b;
@@ -72,6 +72,11 @@ btn-primary:hover{
         border-color: #a51b0b;
         color: #ffffff;
     }
+
+
+
+
+
 
 .navbar {
     position: relative;
