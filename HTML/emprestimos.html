@@ -31,47 +31,50 @@
     </div>
 </nav>
 
-<h5>Nome do professor:</h5>
-<input type="text" name="Nome do professor:" size="40" /> 
+<form method="post" action="emprestimos.php">
+    <h5>Nome do professor:</h5>
+        <input type="text" name="nome" size="40" /> 
 
 
 <h5>Equipamento:</h5>
-<input type="text" name="Nome do professor:" size="40" /> 
+    <input type="text" name="equip" size="40" /> 
+
+<!-- preenchimento dinamico com php depois-->
 
 <h5>Quantidade:</h5>
-<form method="post" action="cadastrar-enquete.php">
-<select name="qtd">
-<option value="bota">01</option>
-<option value="fla">02</option>
-<option value="flu">03</option>
-<option value="vasco">04</option>
-<option value="bota">05</option>
-<option value="fla">06</option>
-<option value="flu">07</option>
-<option value="vasco">08</option>
-<option value="bota">09</option>
-<option value="fla">10</option>
-<option value="flu">11</option>
-<option value="vasco">12</option>
+        <select name="qtd">
+        <option>01</option>
+        <option>02</option>
+        <option>03</option>
+        <option>04</option>
+        <option>05</option>
+        <option>06</option>
+        <option>07</option>
+        <option>08</option>
+        <option>09</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
 </select>
-</form>
 
 <h5>Data:</h5>
-<input id="date" type="date">
+    <input type="date" name="data" id="data">
+
 
 <h5>Período de utilização:</h5>
-<form method="post" action="cadastrar-enquete.php">
-<select name="qtd">
-<option value="bota">19h00 às 20h40</option>
-<option value="fla">20h40 às 22h30</option>
-<option value="flu">19h00 às 22h30</option>
+    <select name="periodo">
+        <option>19h00 às 20h40</option>
+        <option>20h40 às 22h30</option>
+        <option>19h00 às 22h30</option>
+    </select>
 
-</select>
-</form>
 
 <h5>Observações:</h5>
-<input type="text" name="Observações:" size="250" /> 
+    <input type="text" name="obs" size="250" /> 
 
-<button class="btn btn-primary" type="button">Realizar empréstimo</button>
+<!-- <button class="btn btn-primary" type="button">Realizar empréstimo</button> -->
 
+<input type="submit" name="Realizar empréstimo">
+
+</form>
 </body>
