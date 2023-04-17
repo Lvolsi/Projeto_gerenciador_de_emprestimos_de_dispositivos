@@ -1,0 +1,84 @@
+@font-face {
+	font-family: "OpenSans";
+	src: url(./fontes/OpenSans-Light.ttf);
+}
+
+
+html {
+	font-family: 'OpenSans';
+}
+
+.centro {
+    text-align: center;
+}
+/*
+.btn {
+    font-family: 'OpenSans', OpenSans-Light;
+    font-size: 20px;
+    
+    border: solid 1px transparent;
+    
+    background: #a51b0b;
+    
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 18%;
+    margin-top: 60px;
+    
+}
+
+.btn-primary{
+    color:aliceblue;
+    border-color: red;
+    transition: background 0.3s linear 0s;
+}
+
+btn-primary:hover{
+
+}*/
+
+.btn{
+    
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 18%;
+    margin-top: 60px;
+    background: none;
+    border: solid 1px transparent;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: 'OpenSans', OpenSans-Light;
+    
+    padding: 6px 12px;
+    text-decoration: none;
+}
+
+    .btn i{
+        margin-right: 5px;
+    }
+
+/* BTN CORES */
+.btn-primary{
+    border-color: #a51b0b;
+    color: #a51b0b;
+    transition: background 0.3s linear 0s;
+}
+
+    .btn-primary:hover{
+        background: #a51b0b;
+        border-color: #a51b0b;
+        color: #ffffff;
+    }
+
+
+
+
+
+
+.navbar {
+    position: relative;
+    margin-top: auto;
+}
