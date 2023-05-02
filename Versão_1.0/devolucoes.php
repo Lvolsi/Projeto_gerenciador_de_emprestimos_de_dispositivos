@@ -1,71 +1,77 @@
 <?php
-    session_start();
-    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
-    {
-        header("location: index.php");
-        exit;
-    }
-?> 
+    include_once('dev.php');
+    include_once('emp.php');
+?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
 	<title>Gerenciador de empréstimos de dispositivos</title>
-			<link rel="stylesheet" type="text/css" href=".\style\style.css">
-			<link rel="icon" href="https://img.icons8.com/external-icongeek26-outline-icongeek26/256/external-education-education-icongeek26-outline-icongeek26-1.png" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href=".\style\style.css">
+		<link rel="icon" href="https://img.icons8.com/external-icongeek26-outline-icongeek26/256/external-education-education-icongeek26-outline-icongeek26-1.png" type="image/x-icon">
+<!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
+<nav class="navbar navbar-expand-lg navbar-light" style=" background-color: #e4e4e4">
+    <a href="https://fatecararas.cps.sp.gov.br/" rel="home" title="Fatec Araras">
+    <a href="https://fatecararas.cps.sp.gov.br/" class="custom-logo-link" rel="home" aria-current="page">
+    <img width="280" height="75" src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/19/2022/11/fatec_ra_campinas__araras_e_marilia__editavel_araras.png" class="custom-logo" alt="Fatec Araras" /></a></a>
 
-<body>
-<!--Cabeçalho -->  
-	<header>
-    
-        <div class="cps-header__logo">
-            <a href="https://fatecararas.cps.sp.gov.br/" rel="home" title="Fatec Araras"><a href="https://fatecararas.cps.sp.gov.br/" class="custom-logo-link" rel="home" aria-current="page"><img width="280" height="75" src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/19/2022/11/fatec_ra_campinas__araras_e_marilia__editavel_araras.png" class="custom-logo" alt="Fatec Araras" /></a></a>
-        </div>     
-    
-  </header>  
-  <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #a51b0b;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
   
-    <div class="collapse navbar-collapse justify-content-end mx-auto" style="height: 50px;">
-        <ul>
-
-            <li>
-                <a href="https://github.com/Lvolsi/Projeto_gerenciador_de_emprestimos_de_dispositivos"
-                    style="color: #ffffff; font-size: 18  px; margin-top: 50px;">Sobre nós</a>
-            </li>
-
-        </ul>
-    </div>
+  <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="./index.php">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://github.com/Lvolsi/Projeto_gerenciador_de_emprestimos_de_dispositivos">Sobre nós</a>
+      </li>
+  </ul>
 </nav>
 
-<h5>ID do empréstimo:</h5>
-<form method="post" action="cadastrar-enquete.php">
-<select name="qtd">
-<option value="bota">01</option>
-<option value="fla">02</option>
-<option value="flu">03</option>
-<option value="vasco">04</option>
-<option value="bota">05</option>
-<option value="fla">06</option>
-<option value="flu">07</option>
-<option value="vasco">08</option>
-<option value="bota">09</option>
-<option value="fla">10</option>
-<option value="flu">11</option>
-<option value="vasco">12</option>
-</select>
-</form>
+<body>
+    <div class="form-outline mb-4">
+        <h5>Observações:</h5>
+        <input type="text" name="Observações:" size="150" /> 
+    </div>
 
-<h5>Data da devolução:</h5>
-<input id="date" type="date">
+    <div>
+        <table class="table">
+        <thead class="table table-striped">
+            <tr>
+                <th scope="col">Nome do professor</th>
+                <th scope="col">Equipamento</th>
+                <th scope="col">Período de utilização</th> 
+                <th scope="col">Observações</th>
+                <th scope="col">Data do empréstimo</th>
+                <th scope="col">Id</th>
+            </tr>
+            <tbody>
+                <?php
+                    if ($result = mysqli_query($con, $consulta))
+                    {
+                        while($user_data = mysqli_fetch_assoc($result))
+                        {
+                            echo "<tr>"; //cria nova linha
+                            echo "<td>".$user_data['nome']."<td>";
+                            echo "<td>".$user_data['equipamento']."<td>";
+                            echo "<td>".$user_data['periodo']."<td>";
+                            echo "<td>".$user_data['observacoes']."<td>";
+                            echo "<td>".$user_data['data_emp']."<td>";
+                            echo "<td>".$user_data['id_emp']."<td>";
+                        }
+                    }
+                ?>
+            </tbody>
+        </thead>
+        </table>  
+    </div>
 
-<h5>Hora da devolução:</h5>
-<input type="time" id="appt" name="appt">
-
-<h5>Observações:</h5>
-<input type="text" name="Observações:" size="250" /> 
-
-<button class="btn btn-primary" type="button">Realizar devolução</button>
-
+    <div>
+        <button class="btn btn-outline-danger" type="button" name="Devolver">Realizar devolução</button>
+    </div>
 </body>
