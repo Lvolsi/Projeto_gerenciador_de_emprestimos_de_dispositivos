@@ -1,10 +1,11 @@
 <?php
-//CÓDIGO PARA ENVIAR AS INFORMAÇÕES DO EMPRÉSTIMO PARA O BANCO   
+//CÓDIGO PARA ENVIAR AS INFORMAÇÕES DO EMPRÉSTIMO PARA O BANCO 
+include('conexao_banco.php');  
 if(isset($_POST['Enviar'])){
 
     $vnome = $_POST["nome"];
     $vequip = $_POST["equip"];
-    $vdata_emp = $_POST["data_emp"];
+    $vdata_emp = $_POST["data"];
     $vperiodo = $_POST["periodo"];
     $vobs = $_POST["obs"];
     

@@ -1,5 +1,5 @@
 <?php //CÓDIGO PARA MANDAR AS INFORMAÇÕES DO ITEM A SER DEVOLVIDO PARA O BANCO
-include_once('emp.php');
+
 include_once('devolucoes.php');
 
 session_start();
@@ -37,16 +37,16 @@ if(isset($_POST['Devolver'])){
     $id_emp = $id_emprestimo_selecionado[0]; // Acessando o primeiro empréstimo selecionado
 
     // Atualização do campo status_emp para 1 (verdadeiro)
-    $sql = "UPDATE emprestimos SET status_emp = 1 WHERE id = $id_emp";
+    $sql = "UPDATE emprestimos SET status_emp = 1 WHERE id_emp = $id_emp";
     }
 
-    if(mysqli_query($con, $sql,$result)){
+    if(mysqli_query($con, $sql)){
         echo "Devolução realizada com sucesso.";
         
     } else{
         echo "Erro: " . mysqli_error($con);
     }
-   mysqli_close($con);
+//   mysqli_close($con);
 }
 
 ?>

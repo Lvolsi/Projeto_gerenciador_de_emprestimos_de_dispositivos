@@ -39,8 +39,14 @@
         <br>
     </div>
     
+
+
     <div>
-        <table class="table table-hover">
+        
+        <form class="form-outline mb-4" method="post" action="dev.php">
+            <input type="hidden" name="data_devolucao" value="<?php echo $data_devolucao; ?>">
+            
+            <table class="table table-hover">
         <thead>
             <tr>
                <!-- <th scope="col">Id do empréstimo</th> -->
@@ -70,13 +76,9 @@
                 ?>
             </tbody>
         </thead>
-        </table>  
-    </div>
-
-    <div>
-        <form class="form-outline mb-4" method="post" action="dev.php">
-            <input type="hidden" name="data_devolucao" value="<?php echo $data_devolucao; ?>">
-            <h6>Observações:</h6>
+        </table> 
+        
+        <h6>Observações:</h6>
             <input type="text" name="observacoes_dev" size="150" value="<?php echo $observacoes_dev; ?>">
             <div>
                 <button class="btn btn-outline-danger" type="submit" name="Devolver" value="<?php echo $id_emp; ?>">Realizar devolução</button>
