@@ -1,27 +1,21 @@
 <?php
-
+//CÓDIGO PARA ENVIAR AS INFORMAÇÕES DO EMPRÉSTIMO PARA O BANCO   
 if(isset($_POST['Enviar'])){
 
     $vnome = $_POST["nome"];
     $vequip = $_POST["equip"];
-    $vdata = $_POST["data"];
+    $vdata_emp = $_POST["data_emp"];
     $vperiodo = $_POST["periodo"];
     $vobs = $_POST["obs"];
+    
    
-
-    $host = "localhost";
-    $banco = "gerenciador_v1";
-    $user = "root";
-    $senha_user = ""; // senha do banco de dados
-
-    $con = mysqli_connect($host, $user, $senha_user, $banco);
-
+   
     if (!$con){
         die("Conexão falha" . mysqli_connect_error());
     }
 
     $sql = "INSERT INTO emprestimos (nome, equipamento, periodo, observacoes, data_emp) 
-            VALUES ('$vnome', '$vequip', '$vperiodo', '$vobs', '$vdata')";
+            VALUES ('$vnome', '$vequip', '$vperiodo', '$vobs', '$vdata_emp')";
 
     if(mysqli_query($con, $sql)){
         echo "Empréstimo realizado com sucesso.";

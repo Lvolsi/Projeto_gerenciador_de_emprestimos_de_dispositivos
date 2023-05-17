@@ -49,12 +49,11 @@
 
 <h5>Período de utilização:</h5>
 <form method="post" action="cadastrar-enquete.php">
-<select name="qtd">
-<option value="bota">19h00 às 20h40</option>
-<option value="fla">20h40 às 22h30</option>
-<option value="flu">19h00 às 22h30</option>
-
-</select>
+    <select name="qtd">
+    <option value="bota">19h00 às 20h40</option>
+    <option value="fla">20h40 às 22h30</option>
+    <option value="flu">19h00 às 22h30</option>
+    </select>
 </form>
 
 <button class="btn btn-primary" type="button">Realizar consulta</button>

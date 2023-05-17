@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
 	<title>Gerenciador de empréstimos de dispositivos</title>
-		<link rel="stylesheet" type="text/css" href=".\style\style.css">
+	
 		<link rel="icon" href="https://img.icons8.com/fluency/256/technology-items.png" type="image/x-icon">
 <!-- Bootstrap CSS -->
         <link href="./css/bootstrap.css" rel="stylesheet" type="text/css">
