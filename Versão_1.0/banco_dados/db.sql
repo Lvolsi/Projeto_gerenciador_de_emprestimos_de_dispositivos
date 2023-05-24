@@ -14,7 +14,16 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela gerenciador_v1.emprestimos: ~8 rows (aproximadamente)
+INSERT IGNORE INTO `emprestimos` (`nome`, `equipamento`, `periodo`, `observacoes`, `data_emp`, `data_dev`, `observacoes_dev`, `status_emp`, `id_emp`) VALUES
+	('Larissa Volsi dos Santos', 'Note 01, 02', '4', 'Kit 01 incompleto, sem mouse. ', '2023-04-11', NULL, NULL, NULL, 1),
+	('Larissa Volsi dos Santos', 'Note 01, 04, 10', '1', '', '2023-05-04', NULL, NULL, NULL, 2),
+	('Nilton', '08, 5', '6', 'Kit 05 incompleto', '2023-04-27', NULL, NULL, b'1', 3),
+	('Pedro', 'Notebook 1', '3', '', '2023-04-18', NULL, NULL, NULL, 4),
+	('Luciana', 'Notebook 07, 08', '4', 'Teste', '2023-05-06', NULL, NULL, b'1', 5),
+	('Gustavo', 'note 9', '1', '', '0000-00-00', NULL, NULL, NULL, 6),
+	('Maria', 'Caixa de som', '5', '', '2023-05-31', NULL, NULL, NULL, 7),
+	('Felipe', 'note 6', '4', 'Teste', '2023-06-09', NULL, NULL, NULL, 8);
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
