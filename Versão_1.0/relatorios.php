@@ -1,8 +1,5 @@
-
-<?php //INSERIR AQUI A CONEXÃO COM O BOTÃO "ENVIAR RELATÓRIO" E TAMBÉM UMA OPÇÃO DE BAIXAR O RELATÓRIO
-   // require('conexao_banco.php');
-    include('emitir_relatorio.php');
-    
+<?php 
+    require('conexao_banco.php');
 ?>
 
 <!DOCTYPE html>
@@ -36,13 +33,13 @@
 
 <form class="form-outline mb-4" method="post" action="emitir_relatorio.php">
     <div>
-    <h4>Insira o período no qual deseja emitir o relatório:</h4>
-    <h5>Data inicial:</h5>
+    <h6>Insira o período no qual deseja emitir o relatório:</h6>
+    <h6>Data inicial:</h6>
     <input type="date" name="data_inicial" id="data_inicial">
 
-    <h5>Data final:</h5>
+    <h6>Data final:</h6>
     <input type="date" name="data_final" id="data_final">
-        <a href="./relatorio_emitido.php"><button class="btn btn-danger" type="submit" name="emissao">Emitir relatório</button></a>
+        <a href="./emitir_relatorio.php"><button class="btn btn-danger" type="submit" name="emissao">Emitir relatório</button></a>
     </div>
   
 </form>

@@ -42,7 +42,7 @@
 </div>
     <a href="./devolucoes.php"><button class="btn btn-danger" type="button">Devoluções</button></a>
 <div> 
-  <a href="./consultas.php"><button class="btn btn-danger" type="button">Consultas</button></a>
+<!-- <a href="./consultas.php"><button class="btn btn-danger" type="button">Consultas</button></a>-->
 </div>
   <a href="./relatorios.php"><button class="btn btn-danger" type="button">Emissão de relatórios</button></a>
 <div>

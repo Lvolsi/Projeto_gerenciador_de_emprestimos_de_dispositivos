@@ -38,53 +38,48 @@
         <h7><strong>Empréstimos ativos:</strong> <br> </h7>
         <br>
     </div>
-    
-
 
     <div>
-        
-        <form class="form-outline mb-4" method="post" action="dev.php">
-            <input type="hidden" name="data_devolucao" value="<?php echo $data_devolucao; ?>">
-            
-            <table class="table table-hover">
-        <thead>
-            <tr>
-               <!-- <th scope="col">Id do empréstimo</th> -->
-                <th scope="col"> </th>
-                <th scope="col">Nome do professor</th>
-                <th scope="col">Equipamento</th>
-                <th scope="col">Período de utilização</th> 
-                <th scope="col">Observações</th>
-                <th scope="col">Data do empréstimo</th>
-            </tr>
-            <tbody>
-                <?php 
-                   
-                    if ($result = mysqli_query($con, $consulta))
-                    {
-                        while($user_data = mysqli_fetch_assoc($result))
+        <form class="form-outline mb-4" method="post" action="dev.php">           
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col"> </th>
+                    <th scope="col">Nome do professor</th>
+                    <th scope="col">Equipamento</th>
+                    <th scope="col">Período de utilização</th> 
+                    <th scope="col">Observações</th>
+                    <th scope="col">Data do empréstimo</th>
+                </tr>
+                <tbody>
+                    <?php 
+                    
+                        if ($result = mysqli_query($con, $consulta))
                         {
-                            echo "<tr>"; //cria nova linha
-                            echo "<td><input type='checkbox' name='selecionar[]' value='".$user_data['id_emp']."'></td>";
-                            echo "<td>".$user_data['nome']."</td>";
-                            echo "<td>".$user_data['equipamento']."</td>";
-                            echo "<td>".$user_data['periodo']."</td>";
-                            echo "<td>".$user_data['observacoes']."</td>";
-                            echo "<td>".$user_data['data_emp']."</td>";
+                            while($user_data = mysqli_fetch_assoc($result))
+                            {
+                                echo "<tr>"; //cria nova linha
+                                echo "<td><input type='checkbox' name='selecionar[]' value='".$user_data['id_emp']."'></td>";
+                                echo "<td>".$user_data['nome']."</td>";
+                                echo "<td>".$user_data['equipamento']."</td>";
+                                echo "<td>".$user_data['periodo']."</td>";
+                                echo "<td>".$user_data['observacoes']."</td>";
+                                echo "<td>".$user_data['data_emp']."</td>";
+                            }
                         }
-                    }
-                ?>
-            </tbody>
-        </thead>
+                    ?>
+                </tbody>
+            </thead>
         </table> 
-
-        
         
         <h6>Observações:</h6>
-            <input type="text" name="observacoes_dev" size="150">
+        <input type="text" name="observacoes_dev" size="150">
+        <h6>Data de devolução:</h6>
+        <input type="date" name="data_dev" id="data_dev">
             <div>
                 <button class="btn btn-outline-danger" type="submit" name="Devolver" value="<?php echo $id_emp; ?>">Realizar devolução</button>
             </div>
+       
         </form>
     </div>
 

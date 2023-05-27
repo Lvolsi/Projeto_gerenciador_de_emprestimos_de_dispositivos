@@ -2,14 +2,6 @@
 
 include_once('devolucoes.php');
 
-session_start();
-    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
-    {
-        header("location: index.php");
-        exit;
-    }
-    
-   // $observacoes_dev = isset($_POST['observacoes_dev']) ? $_POST['observacoes_dev'] : '';
     $id_emp = isset($_POST['id_emp']) ? $_POST['id_emp'] : 0;
 
     $consulta = "SELECT nome, periodo, equipamento, observacoes, data_emp, id_emp 
@@ -18,7 +10,7 @@ session_start();
     $result = $con->query($consulta);  
 
 if(isset($_POST['Devolver'])){
-    $data_devolucao = ("d/m/Y");
+    $data_devolucao = $_POST['data_dev'];
     $observacoes_dev = $_POST['observacoes_dev'];
     
     $id_emprestimo_selecionado = $_POST['selecionar'];
@@ -39,7 +31,7 @@ if(isset($_POST['Devolver'])){
             SET 
             status_emp = 1,
             observacoes_dev = '$observacoes_dev', 
-            data_dev = '$data_devolucao'
+            data_dev = '$data_dev'
             WHERE id_emp = $id_emp";
     }
 
