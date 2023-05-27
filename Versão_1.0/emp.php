@@ -15,8 +15,8 @@ if(isset($_POST['Enviar'])){
         die("Conexão falha" . mysqli_connect_error());
     }
 
-    $sql = "INSERT INTO emprestimos (nome, equipamento, periodo, observacoes, data_emp) 
-            VALUES ('$vnome', '$vequip', '$vperiodo', '$vobs', '$vdata_emp')";
+    $sql = "INSERT INTO emprestimos (nome, equipamento, periodo, observacoes, data_emp, status_emp) 
+            VALUES ('$vnome', '$vequip', '$vperiodo', '$vobs', '$vdata_emp', 0)";
 
     if(mysqli_query($con, $sql)){
         echo "Empréstimo realizado com sucesso.";

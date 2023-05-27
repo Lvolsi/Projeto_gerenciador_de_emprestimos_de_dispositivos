@@ -9,26 +9,24 @@ session_start();
         exit;
     }
     
-    $observacoes_dev = isset($_POST['observacoes_dev']) ? $_POST['observacoes_dev'] : '';
+   // $observacoes_dev = isset($_POST['observacoes_dev']) ? $_POST['observacoes_dev'] : '';
     $id_emp = isset($_POST['id_emp']) ? $_POST['id_emp'] : 0;
 
-    $consulta = "SELECT nome, periodo, equipamento, observacoes, data_emp, id_emp FROM emprestimos";
+    $consulta = "SELECT nome, periodo, equipamento, observacoes, data_emp, id_emp 
+                FROM emprestimos
+                where status_emp = 0";
     $result = $con->query($consulta);  
 
 if(isset($_POST['Devolver'])){
-    $data_dev = date("d/m/Y");
+    $data_devolucao = ("d/m/Y");
     $observacoes_dev = $_POST['observacoes_dev'];
     
     $id_emprestimo_selecionado = $_POST['selecionar'];
-
-//    $status_emp = $_POST['status_emp'];
     
     if (!$con){
         die("Conexão falha" . mysqli_connect_error());
     }
  
-    $sql = "INSERT INTO emprestimos (data_dev, obervacoes_dev) 
-    VALUES ('$data_dev', '$observacoes_dev')";
 
 
 
@@ -37,7 +35,12 @@ if(isset($_POST['Devolver'])){
     $id_emp = $id_emprestimo_selecionado[0]; // Acessando o primeiro empréstimo selecionado
 
     // Atualização do campo status_emp para 1 (verdadeiro)
-    $sql = "UPDATE emprestimos SET status_emp = 1 WHERE id_emp = $id_emp";
+    $sql = "UPDATE emprestimos
+            SET 
+            status_emp = 1,
+            observacoes_dev = '$observacoes_dev', 
+            data_dev = '$data_devolucao'
+            WHERE id_emp = $id_emp";
     }
 
     if(mysqli_query($con, $sql)){

@@ -77,9 +77,11 @@
             </tbody>
         </thead>
         </table> 
+
+        
         
         <h6>Observações:</h6>
-            <input type="text" name="observacoes_dev" size="150" value="<?php echo $observacoes_dev; ?>">
+            <input type="text" name="observacoes_dev" size="150">
             <div>
                 <button class="btn btn-outline-danger" type="submit" name="Devolver" value="<?php echo $id_emp; ?>">Realizar devolução</button>
             </div>
